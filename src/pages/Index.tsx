@@ -5,7 +5,6 @@ import AIPredictions from "@/components/AIPredictions";
 import WebToolkits from "@/components/WebToolkits";
 import BitcoinLiteracy from "@/components/BitcoinLiteracy";
 import CommunityImpact from "@/components/CommunityImpact";
-import { supabase } from "@/integrations/supabase/client";
 
 const Index = () => {
   return (

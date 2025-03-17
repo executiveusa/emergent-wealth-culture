@@ -2,13 +2,16 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 
-type BadgeProps = {
+export type BadgeVariant = "default" | "outline" | "secondary" | "destructive" | "success" | "primary";
+export type BadgeSize = "sm" | "md" | "lg";
+
+export interface BadgeProps {
   children: React.ReactNode;
-  variant?: "default" | "outline" | "secondary" | "destructive" | "success" | "primary";
-  size?: "sm" | "md" | "lg";
+  variant?: BadgeVariant;
+  size?: BadgeSize;
   className?: string;
   onClick?: () => void;
-};
+}
 
 const Badge: React.FC<BadgeProps> = ({
   children,

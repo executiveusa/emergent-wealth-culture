@@ -20,6 +20,7 @@ type TransitionProps = {
   as?: React.ElementType;
   threshold?: number;
   once?: boolean;
+  onClick?: () => void;
 };
 
 export const Transition: React.FC<TransitionProps> = ({
@@ -32,6 +33,7 @@ export const Transition: React.FC<TransitionProps> = ({
   as: Component = "div",
   threshold = 0.1,
   once = true,
+  onClick,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -99,6 +101,7 @@ export const Transition: React.FC<TransitionProps> = ({
     <Component 
       id={`transition-${delay}`}
       className={cn(getAnimationClasses(), className)}
+      onClick={onClick}
     >
       {children}
     </Component>
