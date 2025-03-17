@@ -84,7 +84,8 @@ const Card: React.FC<CardProps> = ({
         variants[variant],
         paddings[padding],
         hoverEffects[hover],
-        className
+        className,
+        onClick ? "cursor-pointer" : ""
       )}
       onClick={onClick}
     >
