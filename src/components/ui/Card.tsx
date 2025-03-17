@@ -3,54 +3,77 @@ import React from "react";
 import { cn } from "@/lib/utils";
 import Transition from "./Transition";
 
-type CardProps = {
+type CardVariant = "default" | "outline" | "elevated" | "glass";
+type CardPadding = "none" | "sm" | "md" | "lg";
+type CardHoverEffect = "none" | "lift" | "border" | "glow";
+type CardAnimation = "none" | "fade" | "slide-up" | "scale" | "blur";
+
+export type CardProps = {
   children: React.ReactNode;
-  className?: string;
-  variant?: "default" | "glass" | "outline" | "elevated";
-  padding?: "none" | "sm" | "md" | "lg";
-  animation?: "fade" | "slide-up" | "scale" | "blur" | "none";
+  variant?: CardVariant;
+  padding?: CardPadding;
+  hover?: CardHoverEffect;
+  animation?: CardAnimation;
   delay?: number;
-  hover?: "lift" | "glow" | "border" | "none";
-  onClick?: () => void;
   threshold?: number;
+  className?: string;
+  onClick?: () => void;
 };
 
 const Card: React.FC<CardProps> = ({
   children,
-  className = "",
   variant = "default",
   padding = "md",
+  hover = "none",
   animation = "none",
   delay = 0,
-  hover = "none",
+  threshold = 0.3,
+  className = "",
   onClick,
-  threshold = 0.1,
 }) => {
-  const baseClasses = "rounded-2xl transition-all duration-300";
+  const baseClasses = "rounded-2xl overflow-hidden";
   
   const variants = {
-    default: "bg-white",
-    glass: "backdrop-blur-md bg-white/30 border border-white/30",
-    outline: "bg-transparent border border-emergence-gray-200",
-    elevated: "bg-white shadow-lg"
+    default: "bg-white border border-emergence-gray-200",
+    outline: "bg-white border border-emergence-gray-200",
+    elevated: "bg-white border border-emergence-gray-200 shadow-sm",
+    glass: "bg-white/60 backdrop-blur-sm border border-white/30"
   };
   
   const paddings = {
     none: "",
-    sm: "p-3",
-    md: "p-5",
+    sm: "p-4",
+    md: "p-6",
     lg: "p-8"
   };
   
   const hoverEffects = {
-    lift: "hover:-translate-y-1 hover:shadow-md",
-    glow: "hover:shadow-lg hover:shadow-emergence-blue/10",
-    border: "hover:border-emergence-blue/50",
-    none: ""
+    none: "",
+    lift: "transition-all duration-300 hover:-translate-y-1 hover:shadow-md",
+    border: "transition-all duration-300 hover:border-emergence-blue",
+    glow: "transition-all duration-300 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)]"
   };
   
-  const clickableClasses = onClick ? "cursor-pointer" : "";
+  // If animation is 'none', render without Transition
+  if (animation === "none") {
+    return (
+      <div
+        className={cn(
+          baseClasses,
+          variants[variant],
+          paddings[padding],
+          hoverEffects[hover],
+          className,
+          onClick ? "cursor-pointer" : ""
+        )}
+        onClick={onClick}
+      >
+        {children}
+      </div>
+    );
+  }
   
+  // If animation is specified, wrap with Transition
   return (
     <Transition
       animation={animation}
@@ -61,8 +84,8 @@ const Card: React.FC<CardProps> = ({
         variants[variant],
         paddings[padding],
         hoverEffects[hover],
-        clickableClasses,
-        className
+        className,
+        onClick ? "cursor-pointer" : ""
       )}
       onClick={onClick}
     >

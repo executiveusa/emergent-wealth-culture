@@ -2,9 +2,9 @@
 import React from "react";
 import { CircleUser, Lightbulb, Code, ArrowRight, ShieldCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Card from "./ui/Card";
+import { Card } from "./ui/card";
 import Transition from "./ui/Transition";
-import Badge from "./ui/Badge";
+import { Badge } from "./ui/badge";
 import { Link } from "react-router-dom";
 
 const WebToolkits: React.FC = () => {

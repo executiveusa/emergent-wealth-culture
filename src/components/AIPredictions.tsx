@@ -2,9 +2,9 @@
 import React from "react";
 import { ShieldCheck, TrendingUp, Sparkles, BarChart, Calendar, Zap, PieChart } from "lucide-react";
 import { cn } from "@/lib/utils";
-import Card from "./ui/Card";
+import { Card } from "./ui/card";
 import Transition from "./ui/Transition";
-import Badge from "./ui/Badge";
+import { Badge } from "./ui/badge";
 
 const AIPredictions: React.FC = () => {
   const predictions = [
@@ -117,11 +117,6 @@ interface PredictionCardProps {
 const PredictionCard: React.FC<PredictionCardProps> = ({ prediction }) => {
   return (
     <Card 
-      variant="elevated" 
-      padding="lg" 
-      animation="slide-up" 
-      delay={prediction.delay}
-      hover="lift"
       className="group"
     >
       <div className="flex justify-between items-start mb-4">
