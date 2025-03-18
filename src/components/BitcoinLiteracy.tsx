@@ -1,9 +1,10 @@
+
 import React, { useState } from "react";
 import { Play, ChevronRight, Lightbulb, BookOpen, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Transition from "./ui/Transition";
 import { Badge } from "./ui/badge-redirects";
-import { Card, CardProps } from "./ui/card-redirects";
+import Card from "./ui/Card";
 
 const BitcoinLiteracy: React.FC = () => {
   const [activeModule, setActiveModule] = useState(0);
@@ -53,7 +54,7 @@ const BitcoinLiteracy: React.FC = () => {
       <div className="page-container">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <Transition animation="slide-up">
-            <Badge variant="primary" className="mb-4">Interactive Learning</Badge>
+            <Badge variant="default" className="mb-4 bg-emergence-blue/10 text-emergence-blue">Interactive Learning</Badge>
             <h2 className="text-4xl font-bold mb-6">Bitcoin Literacy Modules</h2>
             <p className="text-emergence-gray-600 text-lg">
               Interactive courses featuring AI avatars of minority crypto pioneers,
@@ -150,7 +151,10 @@ const BitcoinLiteracy: React.FC = () => {
                 
                 {/* Module details */}
                 <div className="p-6">
-                  <Badge variant={modules[activeModule].completed ? "success" : "primary"} size="sm" className="mb-3">
+                  <Badge 
+                    variant={modules[activeModule].completed ? "outline" : "default"}
+                    className={modules[activeModule].completed ? "bg-green-100 text-green-800" : "bg-emergence-blue/10 text-emergence-blue"}
+                  >
                     {modules[activeModule].completed ? "Completed" : "In Progress"}
                   </Badge>
                   
@@ -186,8 +190,12 @@ const BitcoinLiteracy: React.FC = () => {
             
             {/* Real-world scenario preview */}
             <Transition animation="fade" delay={400}>
-              <Card variant="glass" padding="md" className="mt-6">
-                <Badge variant="secondary" size="sm">Real-world Scenario</Badge>
+              <Card 
+                variant="glass" 
+                padding="md" 
+                className="mt-6"
+              >
+                <Badge variant="secondary">Real-world Scenario</Badge>
                 <h4 className="font-medium mt-2 mb-1">Simulate: Converting 15% of paycheck to BTC</h4>
                 <p className="text-sm text-emergence-gray-600">
                   Practice dollar-cost averaging with a virtual simulation of recurring Bitcoin purchases.

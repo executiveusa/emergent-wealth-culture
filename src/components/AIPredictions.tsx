@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ShieldCheck, TrendingUp, Sparkles, BarChart, Calendar, Zap, PieChart } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -47,7 +48,7 @@ const AIPredictions: React.FC = () => {
       <div className="page-container relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <Transition animation="slide-up">
-            <Badge variant="primary" className="mb-4">AI-Powered Insights</Badge>
+            <Badge variant="default" className="mb-4">AI-Powered Insights</Badge>
             <h2 className="text-4xl font-bold mb-6">Minority-Centric Predictions</h2>
             <p className="text-emergence-gray-600 text-lg">
               Our AI analyzes 10,000+ data points daily to predict micro-trends, providing
@@ -92,7 +93,7 @@ def minority_trend_forecast():
                   <Calendar size={18} className="text-emergence-gray-500 mr-2" />
                   <span className="text-sm text-emergence-gray-500">Updated daily</span>
                 </div>
-                <Badge variant="primary" size="sm">99.4% accuracy</Badge>
+                <Badge variant="default" className="text-emergence-blue">99.4% accuracy</Badge>
               </div>
             </div>
           </Transition>
@@ -119,7 +120,7 @@ const PredictionCard: React.FC<PredictionCardProps> = ({ prediction }) => {
       className="group"
     >
       <div className="flex justify-between items-start mb-4">
-        <Badge variant="primary" size="sm">{prediction.category}</Badge>
+        <Badge variant="default" className="bg-emergence-blue/10 text-emergence-blue">{prediction.category}</Badge>
         <div className="h-10 w-10 rounded-full bg-emergence-blue/10 flex items-center justify-center transition-all duration-300 group-hover:bg-emergence-blue/20">
           {prediction.icon}
         </div>

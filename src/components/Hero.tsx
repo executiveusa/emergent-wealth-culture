@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, TrendingUp, BarChart3, Users } from "lucide-react";
@@ -22,7 +23,7 @@ const Hero: React.FC = () => {
           <div className="flex flex-col space-y-8">
             {/* Badge */}
             <Transition animation="fade" show={isLoaded} delay={200}>
-              <Badge variant="primary" className="mb-2">
+              <Badge variant="default" className="mb-2 bg-emergence-blue/10 text-emergence-blue">
                 Web3 Democratized
               </Badge>
             </Transition>

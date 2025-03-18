@@ -2,10 +2,10 @@
 import React from "react";
 import { CircleUser, Lightbulb, Code, ArrowRight, ShieldCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Card } from "./ui/card-redirects";
 import Transition from "./ui/Transition";
 import { Badge } from "./ui/badge-redirects";
 import { Link } from "react-router-dom";
+import Card from "./ui/Card";
 
 const WebToolkits: React.FC = () => {
   const toolkits = [
@@ -38,7 +38,7 @@ const WebToolkits: React.FC = () => {
         <div className="page-container">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <Transition animation="slide-up">
-              <Badge variant="primary" className="mb-4">Web3 Tools</Badge>
+              <Badge variant="default" className="mb-4 bg-emergence-blue/10 text-emergence-blue">Web3 Tools</Badge>
               <h2 className="text-4xl font-bold mb-6">"By Us, For Us" Toolkits</h2>
               <p className="text-emergence-gray-600 text-lg">
                 Culturally authentic Web3 tools designed specifically for minority 
@@ -57,7 +57,7 @@ const WebToolkits: React.FC = () => {
           <Transition animation="fade" delay={400} className="mt-20">
             <div className="bg-gradient-to-br from-emergence-blue/5 to-emergence-blue/10 rounded-2xl p-8 md:p-10">
               <div className="flex items-center justify-between mb-6">
-                <Badge variant="primary" size="md">Social Proof</Badge>
+                <Badge variant="default" className="bg-emergence-blue/10 text-emergence-blue">Social Proof</Badge>
                 <ShieldCheck className="text-emergence-blue" size={24} />
               </div>
               

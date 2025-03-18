@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { MapPin, Users, TrendingUp, Award } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -51,7 +52,7 @@ const CommunityImpact: React.FC = () => {
       <div className="page-container relative z-10">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <Transition animation="slide-up">
-            <Badge variant="primary" className="mb-4">Community Impact</Badge>
+            <Badge variant="default" className="mb-4 bg-emergence-blue/10 text-emergence-blue">Community Impact</Badge>
             <h2 className="text-4xl font-bold mb-6">Building Local Wealth</h2>
             <p className="text-emergence-gray-600 text-lg">
               Tracking real-world impact and Web3 adoption across minority-majority cities,
@@ -105,7 +106,7 @@ const CommunityImpact: React.FC = () => {
             <div className="bg-gradient-to-br from-emergence-blue/5 to-emergence-blue/10 rounded-2xl p-6 md:p-8">
               <div className="flex items-center justify-between mb-8">
                 <div>
-                  <Badge variant="primary" size="sm" className="mb-2">Hyperlocal Insights</Badge>
+                  <Badge variant="default" className="mb-2 bg-emergence-blue/10 text-emergence-blue">Hyperlocal Insights</Badge>
                   <h3 className="text-2xl font-semibold">
                     {cities[selectedCity].name}
                   </h3>
@@ -152,13 +153,13 @@ const CommunityImpact: React.FC = () => {
                 </div>
                 
                 <div className="flex items-center justify-between text-sm">
-                  <Badge variant="secondary" size="sm">
+                  <Badge variant="secondary" className="text-xs">
                     {Math.round(cities[selectedCity].bitcoinAdoption * 0.8)}% Black ownership
                   </Badge>
-                  <Badge variant="secondary" size="sm">
+                  <Badge variant="secondary" className="text-xs">
                     {Math.round(cities[selectedCity].bitcoinAdoption * 0.6)}% Latino ownership
                   </Badge>
-                  <Badge variant="secondary" size="sm">
+                  <Badge variant="secondary" className="text-xs">
                     P2E Earnings Rank: #{cities[selectedCity].ranking}
                   </Badge>
                 </div>
