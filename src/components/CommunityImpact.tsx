@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MapPin, Users, TrendingUp, Award } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Transition from "./ui/Transition";
-import { Badge } from "./ui/badge";
+import { Badge } from "./ui/badge-redirects";
 
 const CommunityImpact: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState(0);

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Play, ChevronRight, Lightbulb, BookOpen, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Transition from "./ui/Transition";
-import { Badge } from "./ui/badge";
-import { Card } from "./ui/card";
+import { Badge } from "./ui/badge-redirects";
+import { Card, CardProps } from "./ui/card-redirects";
 
 const BitcoinLiteracy: React.FC = () => {
   const [activeModule, setActiveModule] = useState(0);

@@ -1,10 +1,9 @@
-
 import React from "react";
 import { ShieldCheck, TrendingUp, Sparkles, BarChart, Calendar, Zap, PieChart } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Card } from "./ui/card";
+import { Card } from "./ui/card-redirects";
 import Transition from "./ui/Transition";
-import { Badge } from "./ui/badge";
+import { Badge } from "./ui/badge-redirects";
 
 const AIPredictions: React.FC = () => {
   const predictions = [

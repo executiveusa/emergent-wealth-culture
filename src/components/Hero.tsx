@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, TrendingUp, BarChart3, Users } from "lucide-react";
 import AnimatedText from "./ui/AnimatedText";
 import Transition from "./ui/Transition";
-import { Badge } from "./ui/badge";
+import { Badge } from "./ui/badge-redirects";
 
 const Hero: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
