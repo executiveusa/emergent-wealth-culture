@@ -8,14 +8,15 @@ import {
   CardDescription, 
   CardContent 
 } from "./card";
-import Card from "./Card";
-import type { CardProps as ShadcnCardProps } from "./card"; 
-import type { CardProps as CustomCardProps } from "./Card";
+
+// Import our custom Card component
+// Using a different approach to avoid case-sensitivity issues
+const CustomCard = require('./Card').default;
+type CustomCardProps = typeof CustomCard extends React.FC<infer P> ? P : never;
 
 // Export both cards, allowing components to use either implementation
 export { 
   ShadcnCard,
-  Card,
   CardHeader, 
   CardFooter, 
   CardTitle, 
@@ -23,11 +24,13 @@ export {
   CardContent 
 };
 
+// Re-export the custom Card
+export const Card = CustomCard;
+
 // Export types from both implementations
 export type { 
-  ShadcnCardProps,
   CustomCardProps
 };
 
 // For backward compatibility, also export the custom Card as the default
-export default Card;
+export default CustomCard;
