@@ -59,6 +59,7 @@
     "react-router": "^6.30.3",
     "react-router-dom": "^6.30.3",
     "recharts": "^2.12.7",
+    "rollup": "^4.59.0",
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
